@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <script>
+        function validateName() { /////validating name
+            var nm = document.getElementById("uname").value //this will retrieve the value of uname text box
+                //alert("name" + nm);
+            if (nm == null || nm == "" || nm.trim().length == 0) {
+                //alert("invalid data");
+                document.getElementById("errname").innerHTML += "name cannot be empty or spaces";
+                return false;
+            } else {
+                //alert("valid data");
+                document.getElementById("errname").innerHTML = "*";
+                return true;
+            }
+        }
+
+        function validatePassword() {
+            var pass = document.getElementById("pass").value;
+            var cpass = document.getElementById("cpass").value;
+            if (pass == null || pass == "" || pass.trim().length == 0) {
+                document.getElementById("errpass").innerHTML += "password cannot be empty";
+                return false;
+            } else {
+                document.getElementById("errpass").innerHTML = "*";
+                if (cpass == null || cpass == "" || cpass.trim().length == 0) {
+                    document.getElementById("errcpass").innerHTML += "confirm password cannot be empty";
+                    return false;
+                } else {
+                    document.getElementById("errcpass").innerHTML = "*";
+                    if (pass != cpass) {
+                        document.getElementById("errcpass").innerHTML += "password and confirm password does not match";
+                        return false;
+                    } else {
+                        document.getElementById("errcpass").innerHTML = "*";
+                        return true;
+                    }
+                }
+            }
+
+        }
+
+        function validate() {
+            var flag = validateName();
+            var flag1 = validatePassword();
+            if (flag && flag1) {
+                var nm = document.getElementById("uname").value;
+                var pass = document.getElementById("pass").value;
+                var cpass = document.getElementById("cpass").value;
+                alert("Name: " + nm + "\nPassword :" + pass + "\ncpass : " + cpass);
+                return true;
+            } else
+                return false;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validate()">
+        Uname <input type="text" id="uname" name="uname">
+        <span style="color:red" id="errname">*</span><br> Password <input type="password" id="pass" name="pass">
+        <span id="errpass" style="color:red"> *</span> <br> confirm password: <input type="password" id="cpass" name="pass">
+        <span style="color:red" id="errcpass">* </span><br>
+        <button type="submit" name="btn" value="submit">Login</button>
+    </form>
+
+    <body>
+        </htm>
