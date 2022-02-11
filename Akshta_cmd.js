@@ -12,4 +12,8 @@
 //COMMANDS FOR BRANCH
 =======
 //RESOLVED
+<<<<<<< HEAD
 >>>>>>> f73cc25689f425ffd4d5c1f4332091a1f40b6bb7
+=======
+//TESTING BRANCHES
+>>>>>>> main
