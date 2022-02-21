@@ -1,0 +1,33 @@
+<html>
+
+<body>
+    <script>
+        class Person {
+            constructor(id, nm, mob) {
+                this.id = id;
+                this.name = nm;
+                this.mobile = mob;
+            }
+            display() {
+                console.log(`id: ${this.id} Name : ${this.name} Mobile:${this.mobile}`);
+            }
+        }
+        class Employee extends Person {
+            constructor(id, nm, mob, dept, desg) {
+                super(id, nm, mob);
+                this.dept = dept;
+                this.desg = desg;
+            }
+            display() {
+                super.display();
+                console.log(`dept : ${this.dept} desg : ${this.desg}`);
+            }
+        }
+
+        var e1 = new Employee(10, "Amit", "22222", "Hr", "mgr");
+        e1.display();
+        alert(e1.name + "    " + e1.dept)
+    </script>
+</body>
+
+</html>
